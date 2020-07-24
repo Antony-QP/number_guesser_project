@@ -9,7 +9,7 @@
 
 let min = 1,
   max = 10,
-  winningNum = 2,
+  winningNum = getWinningNum(min, max),
   guessesLeft = 3;
 
 // UI Elements
@@ -77,6 +77,11 @@ function gameOver(won, msg) {
   UIguessBtn.value = "Play again?";
   UIguessBtn.className += 'play-again';
 
+}
+
+// Get winning Number
+function getWinningNum(min, max) {
+  return (Math.floor(Math.random() * (max - min + 1) + min));
 }
 
 // Message sender
